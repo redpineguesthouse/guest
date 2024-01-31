@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Red Pine Guest House</title>
+    <style>
+        /* CSS stil tanımlamaları */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: inline-block;
+            width: 200px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            display: inline-block;
+            width: 300px;
+            margin-bottom: 10px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Red Pine Guest House</h2>
+<form action="/formu_isle.php" method="post">
+
+    <p>Sayın misafirimiz,<br/><br/>
+    Öncelikle bizleri tercih ettiğiniz için teşekkür ederiz.
+    Rezervasyonunuzla ilgili aşağıdaki formun doldurulmasıyla ve peşinat
+    ödemesinin yapılmasıyla rezervasyonunuzu kesinleştirmiş olacağız.<br/>
+    <br/>
+    Geri dönüşlerinizi rica eder, iyi günler dileriz.<br/>
+    <br/>
+    Red Pine
+    </p>
+    <hr>
+    <h3>Konaklama Bilgileriniz</h3>
+    <label for="rezno">Rezervasyon No:</label>
+    <input type="text" id="rezno" name="rezno" required>
+
+    <label for="reztarih">Rezervasyon Tarihi:</label>
+    <input type="date" id="reztarih" name="reztarih" required>
+
+    <label for="evler1">Konaklanacak Ev/Evler:</label>
+    <select name="evler1" id="evler1">
+        <option value="zeytin">Zeytin - 25m² (1+0) (Nobo + Şömineli)</option>
+        <option value="delice">Delice - 35m² (1+0)</option>
+        <option value="mahzen">Mahzen - 45m² (1+0) (Nobo + Kuzineli)</option>
+        <option value="defne">Defne - 35m² (1+1) (Nobo + Kuzineli)</option>
+        <option value="mese">Meşe - 35m² (1+1) (Nobo + Kuzineli)</option>
+        <option value="erguvan">Erguvan - 60m² (2+1) (Nobo + Kuzineli)</option>
+        <option value="sandal">Sandal - 60m² (2+1) (Nobo + Kuzineli)</option>
+        <option value="gurcu">Gürcü - 75m² (2+1) (Nobo + Şömineli)</option>
+    </select>
+
+    <label for="evler2">Konaklanacak Ev/Evler:</label>
+    <select name="evler2" id="evler2">
+        <option value="bos"></option>
+        <option value="zeytin">Zeytin - 25m² (1+0) (Şömineli)</option>
+        <option value="delice">Delice - 35m² (1+0)</option>
+        <option value="mahzen">Mahzen 45m² - (1+0) (Kuzineli)</option>
+        <option value="defne">Defne - 35m² (1+1) (Kuzineli)</option>
+        <option value="mese">Meşe - 35m² (1+1) (Kuzineli)</option>
+        <option value="erguvan">Erguvan - 60m² (2+1) (Kuzineli)</option>
+        <option value="sandal">Sandal - 60m² (2+1) (Kuzineli)</option>
+        <option value="gurcu">Gürcü - 75m² (2+1) (Şömineli)</option>
+    </select>
+
+    <label for="evler3">Konaklanacak Ev/Evler:</label>
+    <select name="evler3" id="evler3">
+        <option value="bos"></option>
+        <option value="zeytin">Zeytin - 25m² (1+0) (Şömineli)</option>
+        <option value="delice">Delice - 35m² (1+0)</option>
+        <option value="mahzen">Mahzen 45m² - (1+0) (Kuzineli)</option>
+        <option value="defne">Defne - 35m² (1+1) (Kuzineli)</option>
+        <option value="mese">Meşe - 35m² (1+1) (Kuzineli)</option>
+        <option value="erguvan">Erguvan - 60m² (2+1) (Kuzineli)</option>
+        <option value="sandal">Sandal - 60m² (2+1) (Kuzineli)</option>
+        <option value="gurcu">Gürcü - 75m² (2+1) (Şömineli)</option>
+    </select>
+
+    <label for="giris">Giriş Tarihi:</label>
+    <input type="date" id="giris" name="giris" required>
+
+    <label for="cikis">Çıkış Tarihi:</label>
+    <input type="date" id="cikis" name="cikis" required>
+
+    <label for="gecesayisi">Konaklanacak Gece Sayısı:</label>
+    <input type="number" id="gecesayisi" name="gecesayisi" min="1" max="10" required>
+
+    <label for="yetiskinsayisi">Konaklayacak Yetişkin Sayısı:</label>
+    <input type="number" name="yetiskinsayisi" id="yetiskinsayisi" min="1" max="10" required>
+
+    <label for="cocuksayisi">Konaklayacak Çocuk Sayısı:</label>
+    <input type="number" name="cocuksayisi" id="cocuksayisi" min="0" max="10" required>
+
+    <label for="patisayisi">Evcil Hayvan Sayısı:</label>
+    <input type="number" name="patisayisi" id="patisayisi" min="0" max="10">
+
+    <label for="topucret">Toplam Ücret:</label>
+    <input type="text" name="topucret" id="topucret" required>
+
+    <label for="pesinat">Ödenen Peşinat:</label>
+    <input type="text" name="pesinat" id="pesinat" required>
+
+    <label for="dekontaciklama">Dekont Açıklama:</label>
+    <input type="text" name="dekontaciklama" id="dekontaciklama" required>
+
+    <label for="onay">Rezervasyon bilgilerimi onaylıyorum:</label>
+    <input type="checkbox" name="onay" id="onay" required>
+
+    <hr>
+    <h3>Havale İçin IBAN Bilgileri</h3>
+    <p>QNB Finansbank</p>
+    <p>TEKKAN PLASTİK SAN. VE TİC. A.Ş.</p>
+    <p>TR740011100000000103093007</p>
+    <p>Dekontunuzu muhasebe@tekkan.com.tr adresine ya da WhatsApp iletişim numaramıza göndermenizi rica ederiz.</p>
+
+    <hr>
+    <h3><a href="https://secure.octet.com.tr/Ode/StaticPaymentPage.aspx?Code=KO1T1" target="_blank">Kredi Kartınızla Online Ödemek İçin Lütfen Tıklayınız</a></h3>
+    <p>Not: Octet ekranında satıcı için not alanına lütfen yukarıdaki rezervasyon numaranızı yazınız.</p>
+
+    <hr>
+    <h3>Misafir Bilgileri</h3>
+    <label for="musteri_isim">Ad Soyad:</label>
+    <input type="text" name="musteri_isim" id="musteri_isim" required>
+
+    <label for="ceptel">Cep Telefonu:</label>
+    <input type="text" name="ceptel" id="ceptel">
+
+    <label for="eposta">E-posta:</label>
+    <input type="email" name="eposta" id="eposta">
+
+    <label for="adres">Adres:</label>
+    <input type="text" name="adres" id="adres">
+
+    <label for="tckn">TCKN:</label>
+    <input type="text" name="tckn" id="tckn">
+
+    <hr>
+    <h3>Fatura Bilgileri</h3>
+    <label for="faturaunvan">Fatura Unvanı:</label>
+    <input type="text" name="faturaunvan" id="faturaunvan">
+
+    <label for="faturaadresi">Fatura Adresi:</label>
+    <input type="text" name="faturaadresi" id="faturaadresi">
+
+    <label for="istelefon">İş Telefonu:</label>
+    <input type="text" name="istelefon" id="istelefon">
+
+    <label for="iseposta">İş E-posta:</label>
+    <input type="text" name="iseposta" id="iseposta">
+
+    <label for="vd">Vergi Dairesi:</label>
+    <input type="text" name="vd" id="vd">
+
+    <label for="vkn">Vergi Numarası:</label>
+    <input type="text" name="vkn" id="vkn">
+
+    <label for="efatura">E-fatura kullanıcısı mısınız?</label>
+    <select name="efatura" id="efatura">
+        <option value="evet">Evet</option>
+        <option value="hayir">Hayır</option>
+    </select>
+
+    <br>
+    <input type="submit" name="kaydet" value="Gönder">
+</form>
+</body>
+</html>
